@@ -9,9 +9,13 @@
   },
   "license": "WTFPL",
   "main": "index.js",
+  "preferGlobal": true,
+  "bin": {
+    "dirtymarkup": "./index.js",
+    "dirty-markup": "./index.js"
+  },
   "scripts": {
-    "start": "node index",
-    "test": ""
+    "start": "node index"
   },
   "homepage": "https://github.com/zacanger/dirty-markup-cli#readme",
   "repository": {
@@ -20,10 +24,15 @@
   },
   "bugs": "https://github.com/zacanger/dirty-markup-cli/issues",
   "keywords": [
-    "",
-    "dirty-markup-cli"
+    "cli",
+    "css",
+    "dirty-markup",
+    "html",
+    "tidy"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "dirty-markup": "^1.0.7"
+  },
   "devDependencies": {},
   "engines": {
     "node": ">=6.0.0"
