@@ -2,8 +2,15 @@
 
 --------
 
-Installation:
+##Installation:
 
-Usage:
+`npm i -g dirty-markup-cli`
 
-License: WTFPL
+## Usage:
+
+`dirty-markup < foo.html`
+`dirty-markup css < foo.css`
+
+## License:
+
+WTFPL

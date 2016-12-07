@@ -9,9 +9,13 @@ const help = () => console.log(`
   dirtymarkup css < foo.css
 `)
 
-if (!arg) return help()
-let mode
-if (arg[0] === ('css' || 'html')) mode = arg[0]
-let code = arg[0]
-if (mode) code = arg[1]
-dm({ mode, code }, (data) => console.log(data))
+const doThings = (args) => {
+  if (!args.length) return help()
+  let mode
+  if (args[0] === ('css' || 'html')) mode = args[0]
+  let code = args[0]
+  if (mode) code = args[1]
+  dm({ mode, code }, (data) => console.log(data))
+}
+
+doThings(arg)
