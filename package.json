@@ -1,0 +1,31 @@
+{
+  "name": "dirty-markup-cli",
+  "description": "dirty-markup-cli",
+  "version": "0.0.1",
+  "author": {
+    "name": "Zac Anger",
+    "email": "zac@zacanger.com",
+    "url": "http://zacanger.com"
+  },
+  "license": "WTFPL",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "test": ""
+  },
+  "homepage": "https://github.com/zacanger/dirty-markup-cli#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zacanger/dirty-markup-cli.git"
+  },
+  "bugs": "https://github.com/zacanger/dirty-markup-cli/issues",
+  "keywords": [
+    "",
+    "dirty-markup-cli"
+  ],
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=6.0.0"
+  }
+}
