@@ -10,11 +10,16 @@
 
 ```shell
   dirty-markup-cli
+
   usage:
   cat index.html | dirty-markup
-  dirty-markup --css < styles.css
+  dirty-markup --css --4 < styles.css
+
+  options:
+  mode: --html | --css (default: html)
+  indent: --4 | --8 | --tabs (default: 2)
 ```
 
 ## License:
 
-WTFPL
+[WTFPL]('./LICENSE.md')

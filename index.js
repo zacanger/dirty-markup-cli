@@ -4,24 +4,31 @@ const dm = require('dirty-markup')
 const arg = process.argv.slice(2)
 const help = () => console.log(`
   dirty-markup-cli
+
   usage:
   cat index.html | dirty-markup
-  dirty-markup --css < styles.css
+  dirty-markup --css --4 < styles.css
+
+  options:
+  mode: --html | --css (default: html)
+  indent: --4 | --8 | --tabs (default: 2)
 `)
 
 const doThings = (args) => {
-  let mode, code
+  let mode = 'html'
+  let indent = 2
   if (args) {
-    let a = args[0]
-    if (a === '-h' || a === '--help') return help()
-    if (a === '--css') mode = 'css'
-    if (a === '--html') mode = 'html'
+    if (args.includes('-h' || '--help')) return help()
+    if (args.includes('--css')) mode = 'css'
+    if (args.includes('--html')) mode = 'html'
+    if (args.includes('--tabs')) indent = 'tabs'
+    if (args.includes('--4')) indent = 4
+    if (args.includes('--8')) indent = 8
   }
   process.stdin.resume()
   process.stdin.setEncoding('utf8')
-  process.stdin.on('data', (stuff) => {
-    code = stuff
-    dm({ mode, code }, (data) => console.log(data.code))
+  process.stdin.on('data', (code) => {
+    dm({ mode, code, indent }, (data) => console.log(data.code))
   })
 }
 
