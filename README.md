@@ -9,6 +9,7 @@
 ## Usage:
 
 ```shell
+
   dirty-markup-cli
 
   usage:
@@ -17,7 +18,7 @@
 
   options:
   mode: --html | --css (default: html)
-  indent: --4 | --8 | --tabs (default: 2)
+  indent: --2 | --4 | --8 | --tabs (default: 2)
 ```
 
 ## License:

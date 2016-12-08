@@ -13,7 +13,7 @@ const help = () => console.log(`
 
   options:
   mode: --html | --css (default: html)
-  indent: --4 | --8 | --tabs (default: 2)
+  indent: --2 | --4 | --8 | --tabs (default: 2)
 `)
 
 const doThings = (args) => {
@@ -24,14 +24,15 @@ const doThings = (args) => {
     if (args.includes('-v') || args.includes('--version')) return version()
     if (args.includes('--css')) mode = 'css'
     if (args.includes('--html')) mode = 'html'
-    if (args.includes('--tabs')) indent = 'tabs'
+    if (args.includes('--2')) indent = 2
     if (args.includes('--4')) indent = 4
     if (args.includes('--8')) indent = 8
+    if (args.includes('--tabs')) indent = 'tabs'
   }
   process.stdin.resume()
   process.stdin.setEncoding('utf8')
   process.stdin.on('data', (code) => {
-    dm({ mode, code, indent }, (data) => console.log(data.code))
+    dm({ mode, code, indent }, ({ code }) => console.log(code))
   })
 }
 
