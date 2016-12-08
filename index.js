@@ -6,7 +6,7 @@ const help = () => console.log(`
   dirty-markup-cli
   usage:
   cat index.html | dirty-markup
-  dirty-markup < styles.css
+  dirty-markup --css < styles.css
 `)
 
 const doThings = (args) => {

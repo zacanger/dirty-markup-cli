@@ -12,7 +12,7 @@
   dirty-markup-cli
   usage:
   cat index.html | dirty-markup
-  dirty-markup < styles.css
+  dirty-markup --css < styles.css
 ```
 
 ## License:
