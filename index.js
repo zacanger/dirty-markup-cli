@@ -2,6 +2,8 @@
 
 const dm = require('dirty-markup')
 const arg = process.argv.slice(2)
+const pkg = require('./package.json')
+const version = () => console.log(`dirty-markup-cli\n${pkg.version}`)
 const help = () => console.log(`
   dirty-markup-cli
 
@@ -18,7 +20,8 @@ const doThings = (args) => {
   let mode = 'html'
   let indent = 2
   if (args) {
-    if (args.includes('-h' || '--help')) return help()
+    if (args.includes('-h') || args.includes('--help')) return help()
+    if (args.includes('-v') || args.includes('--version')) return version()
     if (args.includes('--css')) mode = 'css'
     if (args.includes('--html')) mode = 'html'
     if (args.includes('--tabs')) indent = 'tabs'
