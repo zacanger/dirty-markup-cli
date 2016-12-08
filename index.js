@@ -5,17 +5,24 @@ const arg = process.argv.slice(2)
 const help = () => console.log(`
   dirty-markup-cli
   usage:
-  dirtymarkup < foo.html
-  dirtymarkup css < foo.css
+  cat index.html | dirty-markup
+  dirty-markup < styles.css
 `)
 
 const doThings = (args) => {
-  if (!args.length) return help()
-  let mode
-  if (args[0] === ('css' || 'html')) mode = args[0]
-  let code = args[0]
-  if (mode) code = args[1]
-  dm({ mode, code }, (data) => console.log(data))
+  let mode, code
+  if (args) {
+    let a = args[0]
+    if (a === '-h' || a === '--help') return help()
+    if (a === '--css') mode = 'css'
+    if (a === '--html') mode = 'html'
+  }
+  process.stdin.resume()
+  process.stdin.setEncoding('utf8')
+  process.stdin.on('data', (stuff) => {
+    code = stuff
+    dm({ mode, code }, (data) => console.log(data.code))
+  })
 }
 
 doThings(arg)
