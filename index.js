@@ -5,7 +5,8 @@ const arg = process.argv.slice(2)
 const { name, version } = require('./package.json')
 const showVersion = () => console.log(`${name}\n${version}`)
 const help = () => console.log(`
-  dirty-markup-cli
+  ${name}
+  version: ${version}
 
   usage:
   cat index.html | dirty-markup
@@ -37,4 +38,5 @@ const doThings = (args) => {
   })
 }
 
-doThings(arg)
+if (!module.parent) doThings(arg)
+else console.log('Please use this module from the command line.')

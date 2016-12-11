@@ -1,7 +1,7 @@
 {
   "name": "dirty-markup-cli",
   "description": "A small CLI for the DirtyMarkup.com API.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "Zac Anger",
     "email": "zac@zacanger.com",
@@ -15,7 +15,7 @@
     "dirty-markup": "./index.js"
   },
   "scripts": {
-    "start": "node index"
+    "test": "echo 'no, sorry'"
   },
   "homepage": "https://github.com/zacanger/dirty-markup-cli#readme",
   "repository": {
