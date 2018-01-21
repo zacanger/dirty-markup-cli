@@ -1,7 +1,7 @@
 {
   "name": "dirty-markup-cli",
   "description": "A small CLI for the DirtyMarkup.com API.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": {
     "name": "Zac Anger",
     "email": "zac@zacanger.com",
